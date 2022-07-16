@@ -1,0 +1,24 @@
+// c++ easy solution
+
+        int begin=0;
+       int end=n-1;
+       while(begin<end){
+           int mid=(begin+end)/2;
+           if(a[mid]<b[mid]){
+               if(a[mid-1]==b[mid-1]){
+                   return mid;
+               }
+               else{
+                   end=mid;
+               }
+           }
+           else{
+                if(a[mid+1]!=b[mid+1]){
+                   return mid+1;
+               }
+               else{
+               begin=mid+1;
+               }
+           }
+       }
+       return 0;
